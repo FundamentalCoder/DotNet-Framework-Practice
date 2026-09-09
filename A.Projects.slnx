@@ -1,1 +1,9 @@
-<Solution />
+<Solution>
+  <Folder Name="/docs/" />
+  <Folder Name="/Projektmappenelemente/">
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/A.Projects.Calculator.Konsole/A.Projects.Calculator.Konsole.csproj" Id="c2b1bf4a-bf08-403e-8255-abeb65984599" />
+  <Project Path="src/A.Projects.Calculator.NET8/A.Projects.Calculator.Konsole.NET8.csproj" Id="07fae3a7-4ada-4f8d-924a-8ca0ab491cbf" />
+  <Project Path="src/A.Projects.Calculator/A.Projects.Calculator.csproj" Id="f649e6a9-ad20-4a4f-b234-d9c085ac86b3" />
+</Solution>
