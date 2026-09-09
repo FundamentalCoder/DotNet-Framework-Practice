@@ -16,6 +16,9 @@ Projektstruktur
 - src/A.Projects.Calculator.NET8/
   - Konsolenanwendung (zielt auf .NET 8)
   - Ähnliche Funktionalität wie die .NET Framework-Version, demonstriert Zielplattform .NET 8.
+- src/A.Projects.Calculator.Forms/
+  - Windows Forms-Anwendung (zielt auf .NET Framework)
+  - Einfache GUI mit Tasten und einem Textfeld, nutzt die Calculator-Bibliothek für Operationen.
 
 Was implementiert wurde
 -----------------------
@@ -26,6 +29,7 @@ Was implementiert wurde
   - public double Divide(int a, int b) — wirft DivideByZeroException, wenn b == 0
 - Zwei Konsolenprogramme, die die Bibliothek verwenden und die Ergebnisse der Operationen ausgeben.
 - Einfache Fehlerbehandlung beim Divisionsversuch durch Abfangen der DivideByZeroException in den Konsolenprogrammen.
+ - Eine Windows Forms-Anwendung (Form1) mit einfacher Tastatur-Eingabe (textBox1) und Button-Handlern, die die Calculator-Klasse verwenden.
 
 Beispiel (Konsole)
 ------------------

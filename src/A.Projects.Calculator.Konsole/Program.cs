@@ -16,7 +16,7 @@ namespace A.Projects.Calculator.Konsole
             int num1 = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Enter second number:");
             int num2 = Convert.ToInt32(Console.ReadLine());
-           A.Projects.Calculator.Calculator calculator = new A.Projects.Calculator.Calculator();
+            Calculator calculator = new Calculator();
             Console.WriteLine($"Addition: {calculator.Add(num1, num2)}");
             Console.WriteLine($"Subtraction: {calculator.Subtract(num1, num2)}");
             Console.WriteLine($"Multiplication: {calculator.Multiply(num1, num2)}");
