@@ -19,6 +19,8 @@ Projektstruktur
 - src/A.Projects.Calculator.Forms/
   - Windows Forms-Anwendung (zielt auf .NET Framework)
   - Einfache GUI mit Tasten und einem Textfeld, nutzt die Calculator-Bibliothek für Operationen.
+- src/B.Project.Konfiguration/
+  - Projekt erstellt, um Konfigurationen zu trainieren und Einstellungen (z. B. appSettings.json) zu verwalten.
 
 Was implementiert wurde
 -----------------------
