@@ -72,3 +72,11 @@ Hinweise
 Kontakt
 -------
 Bei Fragen zum Projektinhalt in diesem Repository bitte im entsprechenden Issue/Commit nachfragen.
+
+Konfigurationsnotizen
+--------------------
+- Ein neues Projekt "src/B.Project.Konfiguration" angelegt, um Konfigurationen zu trainieren und zentrale Einstellungen (z. B. appSettings.json) zu verwalten.
+- Eine appSettings.json wurde im Konfigurationsprojekt angelegt bzw. angepasst, um verschiedene Umgebungswerte zu testen.
+- Grundprinzipien, wie Konfigurationen in .NET-Projekten organisiert und genutzt werden (z. B. projektübergreifende Konfigurationsdateien, Trennung von Einstellungen).
+- Umgang mit einem Multi-Target-Repository: Projekte mit .NET Framework 4.8, .NET 8 und .NET Standard 2.0 koexistieren und können gemeinsam genutzt werden.
+- Arbeit mit Visual Studio (öffnen der Lösung, Starten von Projekten) und Verwendung der PowerShell/dotnet-CLI für .NET-8-Teilprojekte.

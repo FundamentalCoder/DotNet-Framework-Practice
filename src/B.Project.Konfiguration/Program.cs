@@ -1,22 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Windows.Forms;
+
+using Microsoft.Extensions.DependencyInjection;
 
 namespace B.Project.Konfiguration
 {
     internal static class Program
     {
+        public static IConfiguration configuration;
         /// <summary>
         /// Der Haupteinstiegspunkt für die Anwendung.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main(string[] args)
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            var host = Host.CreateDefaultBuilder(args).ConfigureServices((context, services) =>
+            {
+                services.AddSingleton<Form1>();
+                configuration = context.Configuration;
+                string hallo = configuration.GetConnectionString("test");
+                hallo = hallo?.Trim();
+
+            }).Build();
+
+            var configTest = configuration.GetSection("ConnectionStrings");
+            var test = configTest.GetSection("test");
+            
+            var form = host.Services.GetRequiredService<Form1>();
+            
+            form.ShowDialog();
+            
+            
+
         }
     }
 }
