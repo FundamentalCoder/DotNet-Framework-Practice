@@ -31,11 +31,12 @@
             this.TB_C = new System.Windows.Forms.TextBox();
             this.lblKatze = new System.Windows.Forms.Label();
             this.lblHund = new System.Windows.Forms.Label();
+            this.LbLastwagen = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // TB_C
             // 
-            this.TB_C.Location = new System.Drawing.Point(133, 128);
+            this.TB_C.Location = new System.Drawing.Point(122, 276);
             this.TB_C.Name = "TB_C";
             this.TB_C.Size = new System.Drawing.Size(493, 26);
             this.TB_C.TabIndex = 0;
@@ -52,18 +53,29 @@
             // lblHund
             // 
             this.lblHund.AutoSize = true;
-            this.lblHund.Location = new System.Drawing.Point(245, 73);
+            this.lblHund.Location = new System.Drawing.Point(161, 117);
             this.lblHund.Name = "lblHund";
             this.lblHund.Size = new System.Drawing.Size(51, 20);
             this.lblHund.TabIndex = 2;
             this.lblHund.Text = "label2";
             this.lblHund.Click += new System.EventHandler(this.label2_Click);
             // 
+            // LbLastwagen
+            // 
+            this.LbLastwagen.AutoSize = true;
+            this.LbLastwagen.Location = new System.Drawing.Point(175, 182);
+            this.LbLastwagen.Name = "LbLastwagen";
+            this.LbLastwagen.Size = new System.Drawing.Size(51, 20);
+            this.LbLastwagen.TabIndex = 3;
+            this.LbLastwagen.Text = "label1";
+            this.LbLastwagen.Click += new System.EventHandler(this.label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LbLastwagen);
             this.Controls.Add(this.lblHund);
             this.Controls.Add(this.lblKatze);
             this.Controls.Add(this.TB_C);
@@ -79,6 +91,8 @@
         private System.Windows.Forms.TextBox TB_C;
         private System.Windows.Forms.Label lblKatze;
         private System.Windows.Forms.Label lblHund;
+        
+        private System.Windows.Forms.Label LbLastwagen;
     }
 }
 
