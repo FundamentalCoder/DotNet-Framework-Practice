@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{99FB4950-B0DC-4819-9F20-3A0303D38F7B}</ProjectGuid>
+    <ProjectGuid>{8BDF2A9C-6229-476F-8A57-8C4CCC4BC19E}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>A.Projects.Calculator.Forms</RootNamespace>
     <AssemblyName>A.Projects.Calculator.Forms</AssemblyName>
@@ -80,12 +80,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\A.Projects.Calculator\A.Projects.Calculator.csproj">
-      <Project>{f649e6a9-ad20-4a4f-b234-d9c085ac86b3}</Project>
-      <Name>A.Projects.Calculator</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
