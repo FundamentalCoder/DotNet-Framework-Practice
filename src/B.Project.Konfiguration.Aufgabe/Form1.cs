@@ -15,36 +15,29 @@ namespace B.Project.Konfiguration.Aufgabe
         public Form1( FahrzuegeConfig config)
         {
             InitializeComponent();
-            foreach (var item in config.Fahrzeug.Auto.Pkw.GetType().GetProperties())
+            foreach (var item in config.Fahrzeug.Auto)
             {
-                MessageBox.Show(item.Name + " : " + item.GetValue(config.Fahrzeug.Auto.Pkw));
-            }
-
-            foreach (var item in config.Fahrzeug.Auto.Limousine.GetType().GetProperties())
-            {
-                MessageBox.Show(item.Name + " : " + item.GetValue(config.Fahrzeug.Auto.Limousine));
+                if(item.Pkw != null)
+                {
+                    MessageBox.Show(item.Pkw.name + " : " + item.Pkw.ps + " : " + item.Pkw.doors);
+                }
+                if(item.Limousine != null)
+                {
+                    MessageBox.Show(item.Limousine.name + " : " + item.Limousine.ps + " : " + item.Limousine.doors);
+                }
             }
 
             var lkw = config.Fahrzeug.Lastwagen.LKW;
+       
+            var ag = lkw.Anhänger;
 
-            foreach (var item in lkw.GetType().GetProperties())
-            {
-                var value = item.GetValue(lkw);
+            MessageBox.Show("LKW: " + lkw.name + " : " + lkw.ps + " : " + lkw.doors + " : " + ag.name + " : " + ag.size);
 
-                if (value is Anhänger anhänger)
-                {
-                    // Properties des Anhängers auslesen
-                    foreach (var prop in anhänger.GetType().GetProperties())
-                    {
-                        MessageBox.Show(prop.Name + " : " + prop.GetValue(anhänger));
-                    }
-                }
-                else
-                {
-                    // Normale LKW-Properties ausgeben
-                    MessageBox.Show(item.Name + " : " + value);
-                }
-            }
+            var kleinenLastwagen = config.Fahrzeug.Lastwagen.KleineLastwagen;
+            MessageBox.Show(kleinenLastwagen.name + " : " + kleinenLastwagen.ps + " : " + kleinenLastwagen.doors);
+
+
+
 
 
 

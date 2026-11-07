@@ -3,10 +3,12 @@
   <Folder Name="/Projektmappenelemente/">
     <File Path="README.md" />
   </Folder>
-  <Project Path="src/A.Projects.Calculator.Forms/A.Projects.Calculator.Forms.csproj" />
-  <Project Path="src/A.Projects.Calculator.Konsole/A.Projects.Calculator.Konsole.csproj" />
+  <Project Path="src/A.Projects.Calculator.Forms/A.Projects.Calculator.Forms.csproj" Id="8bdf2a9c-6229-476f-8a57-8c4ccc4bc19e" />
+  <Project Path="src/A.Projects.Calculator.Konsole/A.Projects.Calculator.Konsole.csproj" Id="56ae5d26-0acf-49ff-be54-fa226d1f939a" />
   <Project Path="src/A.Projects.Calculator.NET8/A.Projects.Calculator.Konsole.NET8.csproj" />
   <Project Path="src/A.Projects.Calculator/A.Projects.Calculator.csproj" />
   <Project Path="src/B.Project.Konfiguration.Aufgabe/B.Project.Konfiguration.Aufgabe.csproj" Id="a587150e-a033-4b19-b844-c0b01cf0936d" />
+  <Project Path="src/B.Project.Konfiguration.SettingsUmgebungen/B.Project.Konfiguration.SettingsUmgebungen.csproj" Id="677b83f3-0a13-4785-bcc0-765597fb8f38" />
   <Project Path="src/B.Project.Konfiguration/B.Project.Konfiguration.csproj" Id="2d952905-6c5b-4add-98f2-45f8c426a4e4" />
+  <Project Path="src/C.Project.Generic/C.Project.Generic.csproj" Id="ccc0a191-52e6-4fc8-b866-7866c2bcc324" />
 </Solution>

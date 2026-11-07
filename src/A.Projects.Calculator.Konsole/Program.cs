@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using A.Projects.Calculator;
+using Calculator = global::A.Projects.Calculator.Calculator;
 
 namespace A.Projects.Calculator.Konsole
 {

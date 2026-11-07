@@ -14,7 +14,7 @@ namespace B.Project.Konfiguration.Aufgabe
 
     public class Fahrzeug
     {
-        public Auto Auto { get; set; }
+        public List<Auto> Auto { get; set; }
         public Lastwagen Lastwagen { get; set; }
 
     }
@@ -22,11 +22,10 @@ namespace B.Project.Konfiguration.Aufgabe
     public class Auto
     {
         public Pkw Pkw { get; set; }
-        public Limousine Limousine { get; set; }
+        public Limousine Limousine  { get; set; }
     }
     public class Pkw
     {
-
         public string name { get; set; }
         public int ps { get; set; }
         public int doors { get; set; }

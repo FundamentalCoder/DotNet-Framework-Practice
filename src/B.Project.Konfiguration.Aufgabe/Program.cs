@@ -27,7 +27,7 @@ namespace B.Project.Konfiguration.Aufgabe
                 services.AddSingleton<FahrzuegeConfig>(x => x.GetRequiredService<IConfiguration>().Get<FahrzuegeConfig>());
             }).Build();
 
-            var config = host.Services.GetRequiredService<FahrzuegeConfig>();
+          
           
             var form = host.Services.GetRequiredService<Form1>();
             form.ShowDialog();
