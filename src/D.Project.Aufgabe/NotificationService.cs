@@ -1,16 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Reflection.Metadata;
 using System.Text;
+using Microsoft.Extensions.Options;
 
 namespace D.Project.Aufgabe
 {
     public class NotificationService : INotificationService
     {
+        private readonly NotificationOptions _options;
 
-        public void Send(Nachricht<T> message) {
+        public NotificationService(IOptions<NotificationOptions> options)
+        {
+            _options = options.Value;
+        }
 
-            Console.WriteLine($"Notification sent: {message.Content}");
+        public void Send<T>(Nachricht<T> message) {
+
+            Console.WriteLine($"Notification sent:{_options.Prefix} {_options.ApplicationName}: {message.Content}");
 
         }
-    }
+    }   
 }

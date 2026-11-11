@@ -2,17 +2,27 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-Console.WriteLine("Hello, World!");
-
 
 var host = Host.CreateDefaultBuilder(args).ConfigureServices((context, services) =>
 {
+
+    services.Configure<NotificationOptions>(
+        context.Configuration.GetSection("Notification"));
+
     //services.AddSingleton<Form1>();
     services.AddSingleton<INotificationService, NotificationService>();
 }).Build();
 
 var notificationService = host.Services.GetRequiredService<INotificationService>();
 
-notificationService.Send(new Nachricht<string> { Content = "Test " });
+var nachricht = new Nachricht<int>(42);
 
-notificationService.Send(new Nachricht<int> { Content = 42 });
+int ergebnis = nachricht.Content * 2;
+
+notificationService.Send(new Nachricht<int>(ergebnis));
+notificationService.Send(nachricht);
+notificationService.Send(new Nachricht<string>("Test "));
+notificationService.Send("Test 2");
+//notificationService.Send(new Nachricht<string>("Test "));
+
+//notificationService.Send(new Nachricht<int>(42));
