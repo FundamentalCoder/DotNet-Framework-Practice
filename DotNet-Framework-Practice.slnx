@@ -11,4 +11,5 @@
   <Project Path="src/B.Project.Konfiguration.SettingsUmgebungen/B.Project.Konfiguration.SettingsUmgebungen.csproj" Id="677b83f3-0a13-4785-bcc0-765597fb8f38" />
   <Project Path="src/B.Project.Konfiguration/B.Project.Konfiguration.csproj" Id="2d952905-6c5b-4add-98f2-45f8c426a4e4" />
   <Project Path="src/C.Project.Generic/C.Project.Generic.csproj" Id="ccc0a191-52e6-4fc8-b866-7866c2bcc324" />
+  <Project Path="src/D.Project.Aufgabe/D.Project.Aufgabe.csproj" Id="8fd9250b-cd40-4a06-8f88-02c13a2d987b" />
 </Solution>
