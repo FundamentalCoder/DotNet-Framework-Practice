@@ -6,6 +6,6 @@ namespace D.Project.HostConfigGenerics
 {
     public interface ITemperatureMonitor
     {
-       
+         string controllTemperature(double temp);
     }
 }

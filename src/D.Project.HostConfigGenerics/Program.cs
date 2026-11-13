@@ -10,9 +10,15 @@ var host = Host.CreateDefaultBuilder(args)
     {
        services.AddSingleton<ISensorReader, SensorReader>();
         services.AddSingleton<ITemperatureMonitor, TemperatureMonitor>();
-        
+        services.AddHostedService<MonitoringWorker>();
+
     })
     .Build();
 
-var test = host.Services.GetRequiredService<ISensorReader>();
-Console.WriteLine(test.ReadTemperature());
+
+await host.RunAsync();
+
+
+
+
+
