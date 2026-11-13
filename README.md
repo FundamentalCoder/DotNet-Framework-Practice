@@ -1,82 +1,34 @@
-A.Projects — Übungsprojekt: Einfacher Calculator
-===============================================
+﻿# DotNet-Framework-Practice
 
-Kurzbeschreibung
------------------
-Dieses Repository enthält ein kleines Übungsprojekt mit einer wiederverwendbaren Calculator-Bibliothek und zwei Konsolenanwendungen (eine für .NET Framework 4.8, eine für .NET 8). Ziel war es, grundlegende arithmetische Operationen zu implementieren und die Bibliothek aus unterschiedlichen Projekttypen zu verwenden.
+Dieses Repository enthält Lern- und Übungsprojekte zu .NET. Die Themen umfassen einfache Berechnungen, Konfiguration, Generics und unterschiedliche .NET-Zielplattformen.
 
-Projektstruktur
----------------
-- src/A.Projects.Calculator/
-  - Bibliothek (Target z. B. .NET Standard 2.0)
-  - Enthält A.Projects.Calculator.Calculator mit den Kernmethoden (Add, Subtract, Multiply, Divide).
-- src/A.Projects.Calculator.Konsole/
-  - Konsolenanwendung (zielt auf .NET Framework 4.8)
-  - Nutzt die Calculator-Bibliothek und liest zwei Zahlen von der Konsole ein.
-- src/A.Projects.Calculator.NET8/
-  - Konsolenanwendung (zielt auf .NET 8)
-  - Ähnliche Funktionalität wie die .NET Framework-Version, demonstriert Zielplattform .NET 8.
-- src/A.Projects.Calculator.Forms/
-  - Windows Forms-Anwendung (zielt auf .NET Framework)
-  - Einfache GUI mit Tasten und einem Textfeld, nutzt die Calculator-Bibliothek für Operationen.
-- src/B.Project.Konfiguration/
-  - Projekt erstellt, um Konfigurationen zu trainieren und Einstellungen (z. B. appSettings.json) zu verwalten.
+## Projektübersicht
 
-Was implementiert wurde
------------------------
-- Klasse: A.Projects.Calculator.Calculator
-  - public int Add(int a, int b)
-  - public int Subtract(int a, int b)
-  - public int Multiply(int a, int b)
-  - public double Divide(int a, int b) — wirft DivideByZeroException, wenn b == 0
-- Zwei Konsolenprogramme, die die Bibliothek verwenden und die Ergebnisse der Operationen ausgeben.
-- Einfache Fehlerbehandlung beim Divisionsversuch durch Abfangen der DivideByZeroException in den Konsolenprogrammen.
- - Eine Windows Forms-Anwendung (Form1) mit einfacher Tastatur-Eingabe (textBox1) und Button-Handlern, die die Calculator-Klasse verwenden.
+- `src/A.Projects.Calculator/` – Calculator-Bibliothek mit Addition, Subtraktion, Multiplikation und Division.
+- `src/A.Projects.Calculator.Konsole/` – Konsolenanwendung für .NET Framework 4.8.
+- `src/A.Projects.Calculator.NET8/` – Konsolenanwendung für .NET 8.
+- `src/A.Projects.Calculator.Forms/` – Windows-Forms-Oberfläche für den Calculator.
+- `src/B.Project.Konfiguration/` – Übungen zur Konfiguration mit `appSettings.json`.
+- `src/B.Project.Konfiguration.Aufgabe/` und `src/B.Project.Konfiguration.SettingsUmgebungen/` – weitere Konfigurations- und Umgebungsübungen.
+- `src/C.Project.Generic/` – Übungsprojekt zu Generics.
+- `src/D.Project.Aufgabe/` – Notification-Service mit generischen Nachrichten.
+- `src/D.Project.HostConfigGenerics/` – neu angelegtes Konsolenprojekt für .NET 10, das in die Lösung aufgenommen wurde.
 
-Beispiel (Konsole)
-------------------
-Eingaben:
-- erste Zahl: 10
-- zweite Zahl: 2
+## Aktueller Stand: HostConfigGenerics
 
-Ausgabe:
-- Addition: 12
-- Subtraction: 8
-- Multiplication: 20
-- Division: 5
+Das Projekt `D.Project.HostConfigGenerics` zielt auf .NET 10 und aktiviert Nullable Reference Types sowie implizite Usings. Der Einstiegspunkt liegt in `src/D.Project.HostConfigGenerics/Program.cs` und gibt derzeit „Hello, World!“ aus. Host-, Konfigurations- und Generic-Funktionen sind in diesem Projekt noch nicht implementiert.
 
-Bei Division durch 0 wird die Meldung "Cannot divide by zero." ausgegeben (oder die entsprechende deutsche Meldung, falls geändert).
+## Lösung öffnen und Projekt ausführen
 
-Build & Ausführung
-------------------
-Empfohlen: Visual Studio 2022/2026 öffnen und die Lösung (A.Projects.slnx) laden.
+Die Lösung `DotNet-Framework-Practice.slnx` kann in Visual Studio geöffnet werden. Das .NET-10-Projekt lässt sich über die .NET CLI erstellen und starten:
 
-Mit dotnet CLI (für .NET 8-Projekt):
-- Build: dotnet build src\\A.Projects.Calculator.NET8\\A.Projects.Calculator.Konsole.NET8.csproj
-- Run:   dotnet run --project src\\A.Projects.Calculator.NET8\\A.Projects.Calculator.Konsole.NET8.csproj
+```powershell
+dotnet build src/D.Project.HostConfigGenerics/D.Project.HostConfigGenerics.csproj
+dotnet run --project src/D.Project.HostConfigGenerics/D.Project.HostConfigGenerics.csproj
+```
 
-Die .NET Framework-Konsole muss ggf. über Visual Studio gestartet werden (oder msbuild für .NET Framework verwenden).
+Das Repository enthält Projekte für .NET Framework 4.8, .NET Standard 2.0, .NET 8 und .NET 10. Für .NET Framework kann zum Erstellen gegebenenfalls Visual Studio oder MSBuild erforderlich sein.
 
-Erweiterungsmöglichkeiten
-------------------------
-- Unit-Tests hinzufügen (z. B. xUnit oder NUnit) für die Calculator-Methoden.
-- Überladungen oder Generics hinzufügen, um auch double-Argumente direkt zu unterstützen.
-- CLI-Argumente (z. B. --a 5 --b 3 --op add) für nicht-interaktive Nutzung.
-- Logging und robustere Fehlerbehandlung einbauen.
+## Zweck
 
-Hinweise
---------
-- Dieses Projekt ist als Lern-/Übungsprojekt gedacht.
-- Keine Lizenzangaben im Repo; bei Bedarf eine passende LICENSE-Datei hinzufügen.
-
-Kontakt
--------
-Bei Fragen zum Projektinhalt in diesem Repository bitte im entsprechenden Issue/Commit nachfragen.
-
-Konfigurationsnotizen
---------------------
-- Ein neues Projekt "src/B.Project.Konfiguration" angelegt, um Konfigurationen zu trainieren und zentrale Einstellungen (z. B. appSettings.json) zu verwalten.
-- Eine appSettings.json wurde im Konfigurationsprojekt angelegt bzw. angepasst, um verschiedene Umgebungswerte zu testen.
-- Grundprinzipien, wie Konfigurationen in .NET-Projekten organisiert und genutzt werden (z. B. projektübergreifende Konfigurationsdateien, Trennung von Einstellungen).
-- Umgang mit einem Multi-Target-Repository: Projekte mit .NET Framework 4.8, .NET 8 und .NET Standard 2.0 koexistieren und können gemeinsam genutzt werden.
-- Arbeit mit Visual Studio (öffnen der Lösung, Starten von Projekten) und Verwendung der PowerShell/dotnet-CLI für .NET-8-Teilprojekte.
+Das Repository dient zum Lernen und Ausprobieren von .NET-Funktionen und Projektstrukturen. Die Projekte können unabhängig voneinander unterschiedliche Konzepte demonstrieren.

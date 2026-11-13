@@ -12,4 +12,5 @@
   <Project Path="src/B.Project.Konfiguration/B.Project.Konfiguration.csproj" Id="2d952905-6c5b-4add-98f2-45f8c426a4e4" />
   <Project Path="src/C.Project.Generic/C.Project.Generic.csproj" Id="ccc0a191-52e6-4fc8-b866-7866c2bcc324" />
   <Project Path="src/D.Project.Aufgabe/D.Project.Aufgabe.csproj" Id="8fd9250b-cd40-4a06-8f88-02c13a2d987b" />
+  <Project Path="src/D.Project.HostConfigGenerics/D.Project.HostConfigGenerics.csproj" Id="51fb445e-8ea5-4a91-bdb9-c84b0a37ae44" />
 </Solution>
