@@ -6,6 +6,6 @@ namespace D.Project.HostConfigGenerics
 {
     public interface ISensorReader
     {
-        public int ReadTemperature();
+        double ReadTemperature();
     }
 }
