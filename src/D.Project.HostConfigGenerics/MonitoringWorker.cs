@@ -11,7 +11,7 @@ namespace D.Project.HostConfigGenerics
     {
         private readonly ISensorReader temp;
         private readonly ITemperatureMonitor tempMonitor;
-        private readonly  IOptionsMonitor<MonitorOptions> einstelungen;
+        private  IOptionsMonitor<MonitorOptions> einstelungen;
 
         public MonitoringWorker(ISensorReader sensorReader, ITemperatureMonitor temperatureMonitor, IOptionsMonitor<MonitorOptions> options)
         {
@@ -25,12 +25,22 @@ namespace D.Project.HostConfigGenerics
             Console.WriteLine("BackgroundService gestartet");
             while (!stoppingToken.IsCancellationRequested)
             {
-             
-                var tmp = temp.ReadTemperature();
-                Console.WriteLine($"Aktuelle Temperatur: {tmp}" +"C°"+  " : " + $"{tempMonitor.controllTemperature(tmp)}");
-                Console.WriteLine($"Aktuelles Intervall: {einstelungen.CurrentValue.IntervalSeconds}");
+                if (einstelungen.CurrentValue.Enabled)
+                {
+                    var tmp = temp.ReadTemperature();
+                    Console.WriteLine($"Aktuelle Temperatur: {tmp}" + "C°" + " : " + $"{tempMonitor.controllTemperature(tmp)}");
+                    Console.WriteLine($"Aktuelles Intervall: {einstelungen.CurrentValue.IntervalSeconds}");
+                }
+                else 
+                {
+                    Console.WriteLine("Monitoring ist deaktiviert.");
+                }   
+                
                 await Task.Delay(einstelungen.CurrentValue.IntervalSeconds * 1000, stoppingToken);
-               
+                einstelungen.OnChange(options =>
+                {
+                    Console.WriteLine($"Neue Intervalleinstellung: {options.IntervalSeconds}");
+                });
 
             }
             
