@@ -9,7 +9,9 @@ using Microsoft.Extensions.Options;
 var host = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
+        // add configuration for MonitorOptions as monitoring section
         services.Configure<MonitorOptions>(context.Configuration.GetSection("Monitoring"));
+
         services.AddSingleton<ISensorReader, SensorReader>();
         services.AddSingleton<ITemperatureMonitor, TemperatureMonitor>();
         services.AddHostedService<MonitoringWorker>();
@@ -19,12 +21,12 @@ var host = Host.CreateDefaultBuilder(args)
 var options = host.Services
     .GetRequiredService<IOptionsMonitor<MonitorOptions>>();
 
-using var subscription = options.OnChange(newOptions =>
-{
-    Console.WriteLine("ÄNDERUNG ERKANNT!");
-    Console.WriteLine(
-        $"Neues Intervall: {newOptions.IntervalSeconds}");
-});
+//using var subscription = options.OnChange(newOptions =>
+//{
+//    Console.WriteLine("ÄNDERUNG ERKANNT!");
+//    Console.WriteLine(
+//        $"Neues Intervall: {newOptions.IntervalSeconds}");
+//});
 
 
 await host.RunAsync();

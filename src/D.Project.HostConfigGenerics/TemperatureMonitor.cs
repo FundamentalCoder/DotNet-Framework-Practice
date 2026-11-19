@@ -7,30 +7,28 @@ namespace D.Project.HostConfigGenerics
 {
     public class TemperatureMonitor : ITemperatureMonitor
     {
-        public ISensorReader temp;
-        private readonly  IOptionsMonitor<MonitorOptions> einstellungen;
-
+        public ISensorReader _sensorReader;
+        private readonly  IOptionsMonitor<MonitorOptions> _monitorOptions;
         public TemperatureMonitor(ISensorReader temp, IOptionsMonitor<MonitorOptions> options)
         {
-            this.temp = temp;
-            einstellungen = options;
+            _monitorOptions = options;
+            _sensorReader = temp;
         }
-
-        public string controllTemperature(double temp)
+        public string controllTemperature(double? temperatur = null)
         {
-            
-            if (temp > einstellungen.CurrentValue.MaxTemperature)
+            var currentTemp = temperatur ?? _sensorReader.ReadTemperature();
+
+            if (currentTemp > _monitorOptions.CurrentValue.MaxTemperature)
             {
                 return "Temperatur ist zu hoch";
             }
-            else if (temp < einstellungen.CurrentValue.MinTemperature)
+            else if (currentTemp < _monitorOptions.CurrentValue.MinTemperature)
             {
                 return "Temperatur ist zu niedrig";
             }
             else
             {
                 return "Temperatur ist in OK";
-
             }
         }
     }
